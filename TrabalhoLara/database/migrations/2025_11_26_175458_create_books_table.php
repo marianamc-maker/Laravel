@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('books', function (Blueprint $table) {
+            $table->id();
+            $table->id();
+            $table->string('title', 200);
+            $table->string('author', 100);
+            $table->string('isbn', 13)->unique(); // Exemplo de um campo único
+            $table->integer('publication_year');
+            $table->string('cover_image_path')->nullable(); // Caminho para a capa (PNG/JPG)
+            $table->timestamps();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('books');
+    }
+};
+

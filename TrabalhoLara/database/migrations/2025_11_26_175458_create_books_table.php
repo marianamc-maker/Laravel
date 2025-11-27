@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->id();
             $table->string('title', 200);
             $table->string('author', 100);
-            $table->string('isbn', 13)->unique(); // Exemplo de um campo único
+            $table->string('isbn', 13)->unique();
             $table->integer('publication_year');
-            $table->string('cover_image_path')->nullable(); // Caminho para a capa (PNG/JPG)
-            $table->timestamps();
+            $table->string('cover_image_path')->nullable();
             $table->timestamps();
         });
     }

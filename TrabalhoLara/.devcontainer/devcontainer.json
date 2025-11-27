@@ -1,0 +1,29 @@
+{
+  "name": "LaravelPHP-MySQL",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "ms-azuretools.vscode-docker",
+        "xdebug.php-debug",
+        "onecentlin.laravel-blade",
+        "onecentlin.laravel5-snippets",
+        "austenc.laravel-blade-spacer"
+      ]
+    }
+  },
+  "postCreateCommand": "composer install && php artisan key:generate",
+  "forwardPorts": [3306, 8000],
+  "remoteUser": "vscode"
+}
